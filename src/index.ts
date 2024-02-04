@@ -27,7 +27,11 @@ about.innerHTML = 'About';
 navbar_div.appendChild(home);
 navbar_div.appendChild(about);
 
-main_el.appendChild(navbar);
+// main_el.appendChild(navbar);
+
+const sidenav_container = document.createElement('div');
+sidenav_container.className = 'sidenav';
+main_el.appendChild(sidenav_container);
 
 const div_container = document.createElement('div');
 div_container.className = 'container';
@@ -57,14 +61,12 @@ inner_div_container.appendChild(row);
 
 const layout_row1 = document.createElement('div');
 layout_row1.className = 'col-lg-4';
-layout_row1.style.border = 'solid';
 row.appendChild(layout_row1);
 
 const layout_row2 = document.createElement('div');
 layout_row2.className = 'col-lg-4';
 const selected_list = document.createElement('div');
 selected_list.className = 'selected-list';
-layout_row2.style.border = 'solid';
 layout_row2.appendChild(selected_list);
 
 const selected_header = document.createElement('h2');
@@ -79,7 +81,15 @@ row.appendChild(layout_row2);
 
 const layout_row3 = document.createElement('div');
 layout_row3.className = 'col-lg-4';
-layout_row3.style.border = 'solid';
 row.appendChild(layout_row3);
 
-
+const div_amount = 7;
+for(let i = 1; i < div_amount; i++) {
+    const test_div = document.createElement('div');
+    test_div.className = `test-${i}`;
+    test_div.style.border = 'solid 1px';
+    const test_div_params = document.createElement('p');
+    test_div.appendChild(test_div_params);
+    test_div_params.innerHTML = 'Lorem ipsum dolor';
+    div_container.appendChild(test_div);
+}
